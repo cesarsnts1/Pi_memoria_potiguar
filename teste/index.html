@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memória Potiguar - Início</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Poppins',sans-serif;
+background-color:#f5f5f4;
+color:#333;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#92400e;
+position:fixed;
+width:100%;
+top:0;
+}
+
+.logo{
+font-weight:700;
+font-size:20px;
+color:white;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:white;
+}
+
+nav a:hover{
+color:#fde68a;
+}
+
+.logout{
+background:#ef4444;
+padding:8px 18px;
+border-radius:20px;
+}
+
+/* ESPAÇO */
+.spacer{height:90px;}
+
+/* CARROSSEL */
+.carousel{
+width:100%;
+height:400px;
+overflow:hidden;
+position:relative;
+}
+
+.carousel img{
+width:100%;
+height:400px;
+object-fit:cover;
+position:absolute;
+animation:slide 15s infinite;
+opacity:0;
+}
+
+.carousel img:nth-child(1){animation-delay:0s;}
+.carousel img:nth-child(2){animation-delay:5s;}
+.carousel img:nth-child(3){animation-delay:10s;}
+
+@keyframes slide{
+0%{opacity:0;}
+5%{opacity:1;}
+30%{opacity:1;}
+35%{opacity:0;}
+100%{opacity:0;}
+}
+
+/* SEÇÕES */
+.section{
+padding:70px 8%;
+text-align:center;
+}
+
+.section h2{
+margin-bottom:30px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card-content h3{
+color:#92400e;
+}
+
+/* BOTÃO */
+.btn-section{
+display:inline-block;
+margin-top:20px;
+text-decoration:none;
+background:#92400e;
+color:white;
+padding:10px 22px;
+border-radius:25px;
+}
+
+.btn-section:hover{
+background:#78350f;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px;
+background:#111827;
+color:#aaa;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Memória Potiguar</div>
+<nav>
+<a href="index.html">Início</a>
+<a href="categorias.html">Categorias</a>
+<a href="#">Favoritos</a>
+<a href="#">Sobre</a>
+<a href="login.html" class="logout">Sair</a>
+</nav>
+</header>
+
+<div class="spacer"></div>
+
+<!-- CARROSSEL -->
+<section class="carousel">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+<img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
+</section>
+
+<!-- HISTÓRIA -->
+<section class="section">
+<h2>📜 História</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1601582580200-3c8b4aa3ac32">
+<div class="card-content">
+<h3>Fundação de Caicó</h3>
+<p>Origem histórica da cidade no Seridó.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1530038466036-8792b1a5d7e6">
+<div class="card-content">
+<h3>Patrimônio Cultural</h3>
+<p>Construções históricas da região.</p>
+</div>
+</div>
+
+</div>
+<a href="historia.html" class="btn-section">Conhecer mais →</a>
+</section>
+
+<!-- TURISMO -->
+<section class="section">
+<h2>📍 Turismo</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+<div class="card-content">
+<h3>Açude Gargalheiras</h3>
+<p>Ponto turístico do Seridó.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+<div class="card-content">
+<h3>Serra de Santana</h3>
+<p>Vista incrível da região.</p>
+</div>
+</div>
+
+</div>
+<a href="turismo.html" class="btn-section">Conhecer mais →</a>
+</section>
+
+<footer>
+© 2026 Memória Potiguar
+</footer>
+
+</body>
+</html>
