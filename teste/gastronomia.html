@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>História - Memória Potiguar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #b98260;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #662c09;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #fde68a;
+}
+
+.logout {
+    background: #ef4444;
+    padding: 8px 18px;
+    border-radius: 20px;
+}
+
+/* FAIXA COM IMAGEM */
+.faixa-imagem {
+    width: 100%;
+    
+}
+
+.faixa-imagem img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+.texto-faixa h1 {
+    color: white;
+    background: rgba(0,0,0,0.5);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* CONTEÚDO */
+.container {
+    padding: 50px 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    color: #662c09;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* BOTÃO */
+.btn {
+    display: inline-block;
+    margin: 20px 8%;
+    background:#662c09;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #662c09;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #111827;
+    color: #aaa;
+    margin-top: 40px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Memória Potiguar</div>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="login.html" class="logout">Sair</a>
+    </nav>
+</header>
+
+<!-- FAIXA COM IMAGEM -->
+<div class="faixa-imagem">
+    <img src="C:\Users\Cliente\Downloads\ChatGPT Image 18_04_2026, 18_02_05.png">
+</div>
+
+
+<!-- CONTEÚDO -->
+<section class="container">
+
+    <div class="card">
+        <img src="C:\Users\Cliente\Downloads\taapera.jfif">
+        <div class="card-content">
+            <h3>Recanto da Tapera</h3>
+            <p>A antiga comunidade de Barra de Santana, localizada em Jucurutu, tornou-se um símbolo de transformação com a construção da Barragem de Oiticica. A área foi submersa, levando à realocação dos moradores para outra região.
+
+                Além da mudança geográfica, houve uma ruptura marcada pela perda de espaços importantes, como a igreja e o campo de futebol, que faziam parte da vida comunitária. Assim, o caso representa tanto os benefícios da obra, como a segurança hídrica, quanto as perdas culturais e simbólicas vividas pela população deslocada.
+                </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="c:\Users\Cliente\Downloads\Gastrobar.webp">
+        <div class="card-content">
+            <h3>Gastrobar</h3>
+            <p>O Cruzeiro das Almas é um importante ponto histórico e de devoção popular na cidade de Cruzeta, situado na região do Seridó Potiguar. Frequentemente associado à fundação do município e à história religiosa local, o monumento integra a memória cultural da população.
+
+                Além de seu valor histórico, o Cruzeiro das Almas representa um espaço de oração, tradição e identidade comunitária. Ao longo do tempo, consolidou-se como símbolo da religiosidade popular, preservando práticas e significados que reforçam a cultura e a memória coletiva da cidade.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="C:\Users\Cliente\Downloads\Praça dos Trailers.jpg">
+        <div class="card-content">
+            <h3>Praça dos Trailers</h3>
+            <p>A Casa Forte do Cuó é considerada a construção colonial mais antiga da cidade de Caicó e um marco inicial do povoamento da região do Seridó. Erguida por volta de 1683 pelo Antônio de Albuquerque da Câmara, a estrutura funcionava como residência fortificada e base militar estratégica.
+
+                Além de sua importância arquitetônica, a Casa Forte do Cuó está diretamente ligada ao contexto da Guerra dos Bárbaros, representando um período de conflitos e ocupação territorial. Dessa forma, o local preserva aspectos fundamentais da história regional, contribuindo para a compreensão das origens e da formação do Seridó.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="Tempero da Terra">
+        <div class="card-content">
+            <h3>Tempero da Terra</h3>
+            <p>O Castelo de Engady é uma edificação localizada nos arredores da cidade de Caicó, destacando-se por sua arquitetura singular em meio à paisagem do Seridó. Construído por Antenor Salvino de Araújo, o local foi idealizado como espaço de recolhimento, estudo, meditação e oração.
+
+                Além de sua função religiosa, o castelo chama atenção pelo contraste entre sua estrutura rústica e a aridez do ambiente ao redor. Ao longo do tempo, tornou-se um ponto de interesse por seu aspecto misterioso e simbólico, despertando a curiosidade de visitantes e reforçando seu valor cultural e paisagístico.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="C:\Users\Cliente\Downloads\Museu do Seridó (Histórico e cultural).jfif">
+        <div class="card-content">
+            <h3>Museu do Seridó</h3>
+            <p>O Museu do Seridó, vinculado à Universidade Federal do Rio Grande do Norte, é uma importante instituição histórica e cultural da cidade de Caicó. Instalado em um prédio de 1812, que já funcionou como cadeia pública, o museu tem como missão preservar e divulgar a memória da região do Seridó.
+
+                Além de sua relevância histórica, o museu abriga um acervo diversificado, incluindo arte sacra, peças arqueológicas e registros da cultura local. Dessa forma, contribui para o acesso democrático ao conhecimento, fortalecendo a valorização da história e da identidade cultural seridoense para as gerações atuais e futuras..</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="C:\Users\Cliente\Downloads\Igreja Matriz de Nossa Senhora dos Remédios.jfif">
+        <div class="card-content">
+            <h3>Igreja Matriz de Nossa Senhora dos Remédios</h3>
+            <p>A Igreja Matriz de Nossa Senhora dos Remédios é o principal templo católico de Cruzeta e um importante marco histórico e religioso da cidade. Sua origem está ligada ao antigo nome da fazenda “Remédio”, que posteriormente foi associado à padroeira local.
+
+                Além de sua relevância religiosa, a igreja também representa um ponto central na formação histórica e cultural do município. Ao longo do tempo, tornou-se espaço de encontros, celebrações e tradições, preservando aspectos importantes da identidade e da memória da população local.</p>
+        </div>
+    </div>
+
+</section>
+
+<a href="categorias.html" class="btn">← Voltar para Categorias</a>
+
+<footer>
+    © 2026 Memória Potiguar | IFRN - Caicó
+</footer>
+
+</body>
+</html>
