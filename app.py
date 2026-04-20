@@ -18,7 +18,7 @@ def cadastro():
 
         return redirect(url_for("login"))
 
-    return render_template("cadastro1.html")
+    return render_template("cadastro.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -32,19 +32,19 @@ def login():
 
 @app.route("/inicio")
 def pagina_inicial():
-    return render_template("pagina_inicial.html")
+    return render_template("home.html")
 
 @app.route("/turismo")
 def turismo():
-    return render_template("turismo.html")
+    return render_template("categorias.html")
 
-@app.route("/gastronomico")
-def gastronomico():
-    return render_template("gastronomico.html")
+@app.route("/gastronomia")
+def gastronomia():
+    return render_template("gastronomia.html")
 
-@app.route("/historico")
-def historico():
-    return render_template("historico.html")
+@app.route("/historia")
+def historia():
+    return render_template("historia.html")
 
 @app.route("/eventos")
 def eventos():
@@ -52,15 +52,15 @@ def eventos():
 
 @app.route("/religioso")
 def religioso():
-    return render_template("religioso.html")
+    return render_template("index.html")
 
 @app.route("/sobre")
 def sobre():
-    return "<h1>Página de eventos ainda em construção</h1>"
+    return "<h1>Página sobre ainda em construção</h1>"
 
 @app.route("/favoritos")
 def favoritos():
-    return "<h1>Página de eventos ainda em construção</h1>"
+    return "<h1>Página de favoritos ainda em construção</h1>"
 
 @app.route("/logout")
 def logout():
@@ -68,4 +68,3 @@ def logout():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
