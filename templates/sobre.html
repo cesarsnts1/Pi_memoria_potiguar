@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Sobre - Memória Potiguar</title>
+
+<style>
+body{
+    margin:0;
+    font-family:sans-serif;
+    background:#3f2a1d;
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#2b1d14;
+}
+
+.logo{
+    font-weight:bold;
+    font-size:20px;
+}
+
+.menu a{
+    margin-left:25px;
+    text-decoration:none;
+    color:white;
+}
+
+.menu a:hover{
+    color:#fde68a;
+}
+
+/* CONTEÚDO */
+.container{
+    padding:60px;
+    max-width:1100px;
+    margin:auto;
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+p{
+    line-height:1.6;
+    color:#e7d3c0;
+}
+
+/* CARDS */
+.card{
+    background:#2b1d14;
+    padding:30px;
+    border-radius:20px;
+    margin-top:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* EQUIPE - GRID 2x2 */
+.equipe{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:30px;
+    margin-top:40px;
+    justify-items:center;
+}
+
+.membro{
+    background:#2b1d14;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    width:220px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+
+.membro:hover{
+    transform:translateY(-8px);
+}
+
+/* FOTO REDONDA */
+.membro img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:15px;
+    border:3px solid #92400e;
+}
+
+/* TEXTO */
+.membro h3{
+    margin:10px 0 5px 0;
+}
+
+.membro p{
+    color:#e7d3c0;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+/* ICONES */
+.social{
+    margin-top:10px;
+}
+
+.social a{
+    margin:0 5px;
+    text-decoration:none;
+    font-size:20px;
+    color:#e7d3c0;
+}
+
+.social a:hover{
+    color:#fde68a;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px){
+    .equipe{
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Memória Potiguar</div>
+
+    <div class="menu">
+        <a href="{{ url_for('inicio') }}">Início</a>
+        <a href="#">Categorias</a>
+        <a href="{{ url_for('sobre') }}">Sobre</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Sobre o Projeto</h1>
+
+    <p>
+        O <strong>Memória Potiguar</strong> é um projeto desenvolvido com o objetivo de valorizar 
+        a cultura, história e os pontos turísticos do Rio Grande do Norte.
+    </p>
+
+    <div class="card">
+        <h2>Nosso objetivo</h2>
+        <p>
+            Reunir em um só lugar informações sobre turismo, gastronomia, história e cultura potiguar.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>O que você encontra aqui</h2>
+        <p>
+            Pontos turísticos, culinária típica, locais históricos e muito mais.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Desenvolvimento</h2>
+        <p>
+            Projeto acadêmico desenvolvido com HTML, CSS e Python (Flask).
+        </p>
+    </div>
+
+    <!-- EQUIPE -->
+    <h1 style="margin-top:60px;">Nossa Equipe</h1>
+
+    <div class="equipe">
+
+        <div class="membro">
+            <img src="{{ url_for('static', filename='img/dev1.jpg') }}">
+            <h3>Seu Nome</h3>
+            <p>Front-end</p>
+            <div class="social">
+                <a href="#">🔗</a>
+                <a href="#">💻</a>
+            </div>
+        </div>
+
+        <div class="membro">
+            <img src="{{ url_for('static', filename='img/dev2.jpg') }}">
+            <h3>Nome 2</h3>
+            <p>Back-end</p>
+            <div class="social">
+                <a href="#">🔗</a>
+                <a href="#">💻</a>
+            </div>
+        </div>
+
+        <div class="membro">
+            <img src="{{ url_for('static', filename='img/dev3.jpg') }}">
+            <h3>Nome 3</h3>
+            <p>Designer</p>
+            <div class="social">
+                <a href="#">🔗</a>
+                <a href="#">💻</a>
+            </div>
+        </div>
+
+        <div class="membro">
+            <img src="{{ url_for('static', filename='img/dev4.jpg') }}">
+            <h3>Nome 4</h3>
+            <p>Banco de Dados</p>
+            <div class="social">
+                <a href="#">🔗</a>
+                <a href="#">💻</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

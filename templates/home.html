@@ -2,81 +2,158 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Memória Potiguar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
-font-family:'Poppins',sans-serif;
-background-color:#f4f6fb;
+    margin:0;
+    font-family:sans-serif;
+    background:#3f2a1d;
 }
 
-/* HEADER */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:white;
-position:fixed;
-width:100%;
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#2b1d14;
+    color:white;
 }
 
-.logo{font-weight:700;font-size:20px;color:#1f2d3d;}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#555;
+.logo{
+    font-weight:bold;
+    font-size:20px;
 }
 
-nav a:hover{color:#92400e;}
+.menu a{
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.menu a:hover{
+    color: #fde68a;
+}
+
+.btn-contato{
+    background:#92400e;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    text-decoration:none;
+}
 
 /* HERO */
 .hero{
-height:100vh;
-background:linear-gradient(120deg,#3f2a1d,#92400e);
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
+    margin:20px;
+    border-radius:0;
+    padding:60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:70vh;
+
+    background:
+    linear-gradient(rgba(63,42,29,0.75), rgba(63,42,29,0.9)),
+    url("/static/img/fundo0.jpg");
+
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center bottom;
+    color:white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
-.btn-primary{
-background:#92400e;
-color:white;
-padding:12px 28px;
-border-radius:30px;
-text-decoration:none;
+.texto{
+    max-width:500px;
 }
 
-.btn-primary:hover{background:#78350f;}
+.texto h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
 
+.texto p{
+    margin-bottom:30px;
+    color:#e7d3c0;
+}
+
+.btn{
+    padding:12px 20px;
+    border-radius:25px;
+    margin-right:10px;
+    display:inline-block;
+    text-decoration:none;
+}
+
+/* botões */
+.btn1{
+    background:#e7d3c0;
+    color:#3f2a1d;
+}
+
+.btn2{
+    background:#92400e;
+    color:white;
+}
+
+.btn1:hover{
+    background:#d6bfa7;
+}
+
+.btn2:hover{
+    background:#78350f;
+}
+
+/* imagem lateral */
+.imagem img{
+    width:250px;
+    filter:drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+}
+
+
+@media (max-width: 768px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .imagem img{
+        margin-top:20px;
+        width:200px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">Memória Potiguar</div>
 <nav>
-<a href="home.html">Início</a>
-<a href="categorias.html">Categorias</a>
-<a href="login.html">Login</a>
+    <div class="logo">Memória Potiguar</div>
+
+    <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="sobre.html">Sobre</a>
+    </div>
+
 </nav>
-</header>
 
 <section class="hero">
-<div>
-<h1>Descubra a riqueza cultural do Seridó</h1>
-<br>
-<a href="login.html" class="btn-primary">Entrar</a>
-</div>
+    <div class="texto">
+        <h1>Vivencie a Cultura Potiguar</h1>
+        <p>Descubra sabores, histórias e lugares que fazem do Rio Grande do Norte um lugar único!</p>
+
+        <a href="{{ url_for('cadastro') }}" class="btn btn1">Começar</a>
+        <a href="{{ url_for('login') }}" class="btn btn2">Entrar</a>
+    </div>
+
+    <div class="imagem">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+    </div>
 </section>
 
 </body>

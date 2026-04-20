@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def inicio():
-    return redirect(url_for("cadastro"))
+    return render_template("home.html")
 
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
@@ -26,9 +26,14 @@ def login():
         email = request.form.get("email")
         senha = request.form.get("senha")
 
-        return redirect(url_for("pagina_inicial"))
+        return redirect(url_for("index"))
 
     return render_template("login.html")
+
+
+@app.route("/index")
+def index():
+    return render_template("index.html")
 
 @app.route("/inicio")
 def pagina_inicial():
@@ -56,7 +61,7 @@ def religioso():
 
 @app.route("/sobre")
 def sobre():
-    return "<h1>Página sobre ainda em construção</h1>"
+    return render_template("sobre.html")
 
 @app.route("/favoritos")
 def favoritos():
