@@ -32,7 +32,11 @@ nav{
     color: white;
     font-weight: 500;
 }
-
+.logout{
+background:#ef4444;
+padding:8px 18px;
+border-radius:20px;
+}
 .menu a:hover{
     color: #fde68a;
 }
@@ -135,9 +139,10 @@ nav{
     <div class="logo">Memória Potiguar</div>
 
     <div class="menu">
-        <a href="index.html">Início</a>
-        <a href="categorias.html">Categorias</a>
-        <a href="sobre.html">Sobre</a>
+        <a href="/index">Início</a>
+        <a href="/categorias">Categorias</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/login" class="logout">Sair</a>
     </div>
 
 </nav>
@@ -149,6 +154,8 @@ nav{
 
         <a href="{{ url_for('cadastro') }}" class="btn btn1">Começar</a>
         <a href="{{ url_for('login') }}" class="btn btn2">Entrar</a>
+        <nav>
+</nav>
     </div>
 
     <div class="imagem">

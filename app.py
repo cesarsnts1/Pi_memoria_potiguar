@@ -61,7 +61,7 @@ def religioso():
 
 @app.route("/sobre")
 def sobre():
-    return render_template("sobre.html")
+  return render_template("sobre.html")
 
 @app.route("/favoritos")
 def favoritos():

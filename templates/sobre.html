@@ -2,223 +2,198 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Sobre - Memória Potiguar</title>
+<title>Memória Potiguar - Sobre</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-    margin:0;
-    font-family:sans-serif;
-    background:#3f2a1d;
-    color:white;
+font-family:'Poppins',sans-serif;
+background-color:#f5e6d3;
+position:relative;
 }
 
-/* NAVBAR */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    background:#2b1d14;
+/* HEADER (NAVBAR) */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#92400e;
+position:fixed;
+width:100%;
+top:0;
 }
 
 .logo{
-    font-weight:bold;
-    font-size:20px;
+font-weight:700;
+font-size:20px;
+color:white;
 }
 
-.menu a{
-    margin-left:25px;
-    text-decoration:none;
-    color:white;
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:white;
 }
 
-.menu a:hover{
-    color:#fde68a;
+nav a:hover{
+color:#fde68a;
 }
 
-/* CONTEÚDO */
-.container{
-    padding:60px;
-    max-width:1100px;
-    margin:auto;
+.logout{
+background:#ef4444;
+padding:8px 18px;
+border-radius:20px;
 }
 
-h1{
-    font-size:40px;
-    margin-bottom:20px;
+/* ESPAÇO PRA NÃO FICAR ATRÁS DA NAVBAR */
+.spacer{
+height:90px;
 }
 
-p{
-    line-height:1.6;
-    color:#e7d3c0;
+/* LOGO DE FUNDO */
+body::before {
+content: "";
+position: fixed;
+top: 50%;
+left: 50%;
+width: 500px;
+height: 500px;
+background: url("/static/img/fundo.png");
+background-size: contain;
+transform: translate(-50%, -50%);
+opacity: 0.08;
+z-index: -1;
 }
 
-/* CARDS */
-.card{
-    background:#2b1d14;
-    padding:30px;
-    border-radius:20px;
-    margin-top:30px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+.container {
+max-width: 900px;
+margin: auto;
+padding: 40px;
+text-align: center;
 }
 
-/* EQUIPE - GRID 2x2 */
-.equipe{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:30px;
-    margin-top:40px;
-    justify-items:center;
+h1 {
+font-size: 48px;
+color: #5a2e1f;
 }
 
-.membro{
-    background:#2b1d14;
-    padding:25px;
-    border-radius:20px;
-    text-align:center;
-    width:220px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-    transition:0.3s;
+h2 {
+margin-top: 50px;
+font-size: 32px;
+color: #5a2e1f;
 }
 
-.membro:hover{
-    transform:translateY(-8px);
+p {
+font-size: 18px;
+color: #3d2b1f;
+line-height: 1.6;
 }
 
-/* FOTO REDONDA */
-.membro img{
-    width:120px;
-    height:120px;
-    object-fit:cover;
-    border-radius:50%;
-    margin-bottom:15px;
-    border:3px solid #92400e;
+/* DEVS */
+.devs {
+display: flex;
+justify-content: center;
+margin-top: 30px;
+flex-wrap: wrap;
+gap: 20px;
 }
 
-/* TEXTO */
-.membro h3{
-    margin:10px 0 5px 0;
+.dev {
+width: 200px;
 }
 
-.membro p{
-    color:#e7d3c0;
-    font-size:14px;
-    margin-bottom:10px;
+.dev img {
+width: 120px;
+height: 120px;
+border-radius: 50%;
 }
 
-/* ICONES */
-.social{
-    margin-top:10px;
+.dev h3 {
+margin: 10px 0 5px;
+color: #5a2e1f;
 }
 
-.social a{
-    margin:0 5px;
-    text-decoration:none;
-    font-size:20px;
-    color:#e7d3c0;
+.dev p {
+margin: 0;
+font-weight: bold;
 }
 
-.social a:hover{
-    color:#fde68a;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px){
-    .equipe{
-        grid-template-columns: 1fr;
-    }
+.dev span {
+font-size: 14px;
+color: #555;
 }
 </style>
-</head>
 
+</head>
 <body>
 
+<!-- NAVBAR -->
+<header>
+<div class="logo">Memória Potiguar</div>
 <nav>
-    <div class="logo">Memória Potiguar</div>
-
-    <div class="menu">
-        <a href="{{ url_for('inicio') }}">Início</a>
-        <a href="#">Categorias</a>
-        <a href="{{ url_for('sobre') }}">Sobre</a>
-    </div>
+<a href="/index">Início</a>
+<a href="/turismo">Categorias</a>
+<a href="/sobre">Sobre</a>
+<a href="/login" class="logout">Sair</a>
 </nav>
+</header>
+
+<div class="spacer"></div>
 
 <div class="container">
-    <h1>Sobre o Projeto</h1>
 
-    <p>
-        O <strong>Memória Potiguar</strong> é um projeto desenvolvido com o objetivo de valorizar 
-        a cultura, história e os pontos turísticos do Rio Grande do Norte.
-    </p>
+<h1>Sobre Nós</h1>
 
-    <div class="card">
-        <h2>Nosso objetivo</h2>
-        <p>
-            Reunir em um só lugar informações sobre turismo, gastronomia, história e cultura potiguar.
-        </p>
-    </div>
+<p><strong>Bem-vindo ao Memória Potiguar!</strong></p>
 
-    <div class="card">
-        <h2>O que você encontra aqui</h2>
-        <p>
-            Pontos turísticos, culinária típica, locais históricos e muito mais.
-        </p>
-    </div>
+<p>
+Este projeto foi criado com o objetivo de preservar e divulgar a história
+e a cultura do Rio Grande do Norte, oferecendo um espaço digital onde os
+potiguares podem explorar o rico patrimônio histórico, cultural e artístico do estado.
+</p>
 
-    <div class="card">
-        <h2>Desenvolvimento</h2>
-        <p>
-            Projeto acadêmico desenvolvido com HTML, CSS e Python (Flask).
-        </p>
-    </div>
+<p>
+O Memória Potiguar é uma iniciativa desenvolvida por quatro estudantes que se uniram para criar um portal
+acessível e informativo, dedicado à preservação da memória e identidade potiguar.
+</p>
 
-    <!-- EQUIPE -->
-    <h1 style="margin-top:60px;">Nossa Equipe</h1>
+<h2>Nosso Time de Desenvolvedores</h2>
 
-    <div class="equipe">
+<div class="devs">
 
-        <div class="membro">
-            <img src="{{ url_for('static', filename='img/dev1.jpg') }}">
-            <h3>Seu Nome</h3>
-            <p>Front-end</p>
-            <div class="social">
-                <a href="#">🔗</a>
-                <a href="#">💻</a>
-            </div>
-        </div>
+<div class="dev">
+<img src="https://via.placeholder.com/120">
+<h3>Cesar Santos</h3>
+<p>Desenvolvedor</p>
+<span>Backend e banco de dados</span>
+</div>
 
-        <div class="membro">
-            <img src="{{ url_for('static', filename='img/dev2.jpg') }}">
-            <h3>Nome 2</h3>
-            <p>Back-end</p>
-            <div class="social">
-                <a href="#">🔗</a>
-                <a href="#">💻</a>
-            </div>
-        </div>
+<div class="dev">
+<img src="https://via.placeholder.com/120">
+<h3>Letícia Souza</h3>
+<p>Desenvolvedora</p>
+<span>Design e Front-end</span>
+</div>
 
-        <div class="membro">
-            <img src="{{ url_for('static', filename='img/dev3.jpg') }}">
-            <h3>Nome 3</h3>
-            <p>Designer</p>
-            <div class="social">
-                <a href="#">🔗</a>
-                <a href="#">💻</a>
-            </div>
-        </div>
+<div class="dev">
+<img src="https://via.placeholder.com/120">
+<h3>Guilherme Costa</h3>
+<p>Desenvolvedor</p>
+<span>Lógica e integração</span>
+</div>
 
-        <div class="membro">
-            <img src="{{ url_for('static', filename='img/dev4.jpg') }}">
-            <h3>Nome 4</h3>
-            <p>Banco de Dados</p>
-            <div class="social">
-                <a href="#">🔗</a>
-                <a href="#">💻</a>
-            </div>
-        </div>
+<div class="dev">
+<img src="https://via.placeholder.com/120">
+<h3>Rafael Almeida</h3>
+<p>Desenvolvedor</p>
+<span>Otimização e desempenho</span>
+</div>
 
-    </div>
-
+</div>
 </div>
 
 </body>
