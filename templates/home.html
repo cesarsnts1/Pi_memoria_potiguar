@@ -4,71 +4,75 @@
 <meta charset="UTF-8">
 <title>Memória Potiguar</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-    margin:0;
-    font-family:sans-serif;
-    background:#3f2a1d;
+    font-family:'Poppins',sans-serif;
+    background:#f5e6d3;
 }
 
-
-nav{
+/* NAVBAR IGUAL À SOBRE */
+header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 40px;
-    background:#2b1d14;
-    color:white;
+    padding:20px 8%;
+    background:#92400e;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
-    font-weight:bold;
+    font-weight:700;
     font-size:20px;
-}
-
-.menu a{
-    margin-left: 25px;
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-}
-.logout{
-background:#ef4444;
-padding:8px 18px;
-border-radius:20px;
-}
-.menu a:hover{
-    color: #fde68a;
-}
-
-.btn-contato{
-    background:#92400e;
     color:white;
-    padding:8px 15px;
-    border-radius:20px;
+}
+
+nav a{
+    margin-left:25px;
     text-decoration:none;
+    color:white;
+}
+
+nav a:hover{
+    color:#fde68a;
+}
+
+.logout{
+    background:#ef4444;
+    padding:8px 18px;
+    border-radius:20px;
+}
+
+/* ESPAÇO PRA NAVBAR FIXA */
+.spacer{
+    height:80px;
 }
 
 /* HERO */
 .hero{
     margin:20px;
-    border-radius:0;
     padding:60px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    height:70vh;
+    height:75vh;
 
     background:
-    linear-gradient(rgba(63,42,29,0.75), rgba(63,42,29,0.9)),
+    linear-gradient(rgba(146,64,14,0.7), rgba(146,64,14,0.9)),
     url("/static/img/fundo0.jpg");
 
     background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center bottom;
-    color:white;
+    background-position:center;
 
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    color:white;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .texto{
@@ -82,7 +86,7 @@ border-radius:20px;
 
 .texto p{
     margin-bottom:30px;
-    color:#e7d3c0;
+    color:#fdebdc;
 }
 
 .btn{
@@ -93,36 +97,35 @@ border-radius:20px;
     text-decoration:none;
 }
 
-/* botões */
 .btn1{
-    background:#e7d3c0;
-    color:#3f2a1d;
-}
-
-.btn2{
-    background:#92400e;
-    color:white;
+    background:#f5e6d3;
+    color:#92400e;
 }
 
 .btn1:hover{
-    background:#d6bfa7;
+    background:#e8d5be;
+}
+
+.btn2{
+    background:#78350f;
+    color:white;
 }
 
 .btn2:hover{
-    background:#78350f;
+    background:#5a2e1f;
 }
 
-/* imagem lateral */
 .imagem img{
     width:250px;
     filter:drop-shadow(0 5px 10px rgba(0,0,0,0.4));
 }
 
-
+/* RESPONSIVO */
 @media (max-width: 768px){
     .hero{
         flex-direction:column;
         text-align:center;
+        height:auto;
     }
 
     .imagem img{
@@ -135,27 +138,25 @@ border-radius:20px;
 
 <body>
 
-<nav>
+<header>
     <div class="logo">Memória Potiguar</div>
-
-    <div class="menu">
+    <nav>
         <a href="/index">Início</a>
         <a href="/categorias">Categorias</a>
         <a href="/sobre">Sobre</a>
         <a href="/login" class="logout">Sair</a>
-    </div>
+    </nav>
+</header>
 
-</nav>
+<div class="spacer"></div>
 
 <section class="hero">
     <div class="texto">
-        <h1>Vivencie a Cultura Potiguar</h1>
+        <h1>Vivencie a Cultura Potiguar!</h1>
         <p>Descubra sabores, histórias e lugares que fazem do Rio Grande do Norte um lugar único!</p>
 
         <a href="{{ url_for('cadastro') }}" class="btn btn1">Começar</a>
         <a href="{{ url_for('login') }}" class="btn btn2">Entrar</a>
-        <nav>
-</nav>
     </div>
 
     <div class="imagem">

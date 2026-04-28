@@ -13,9 +13,9 @@ body{
 font-family:'Poppins',sans-serif;
 background-color:#f5e6d3;
 position:relative;
+color:#3d2b1f;
 }
 
-/* HEADER (NAVBAR) */
 header{
 display:flex;
 justify-content:space-between;
@@ -25,6 +25,7 @@ background:#92400e;
 position:fixed;
 width:100%;
 top:0;
+z-index:1000;
 }
 
 .logo{
@@ -49,89 +50,87 @@ padding:8px 18px;
 border-radius:20px;
 }
 
-/* ESPAÇO PRA NÃO FICAR ATRÁS DA NAVBAR */
 .spacer{
-height:90px;
+height:80px;
 }
 
-/* LOGO DE FUNDO */
-body::before {
-content: "";
-position: fixed;
-top: 50%;
-left: 50%;
-width: 500px;
-height: 500px;
-background: url("/static/img/fundo.png");
-background-size: contain;
-transform: translate(-50%, -50%);
-opacity: 0.08;
-z-index: -1;
+body::before{
+content:"";
+position:fixed;
+top:50%;
+left:50%;
+width:500px;
+height:500px;
+background:url("/static/img/fundo.png");
+background-size:contain;
+transform:translate(-50%,-50%);
+opacity:0.05;
+z-index:-1;
 }
 
-.container {
-max-width: 900px;
-margin: auto;
-padding: 40px;
-text-align: center;
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px;
+text-align:center;
 }
 
-h1 {
-font-size: 48px;
-color: #5a2e1f;
+h1{
+font-size:42px;
+color:#5a2e1f;
+margin-bottom:20px;
 }
 
-h2 {
-margin-top: 50px;
-font-size: 32px;
-color: #5a2e1f;
+.container p{
+max-width:800px;
+margin:15px auto;
+font-size:18px;
+line-height:1.8;
+text-align:center;
 }
 
-p {
-font-size: 18px;
-color: #3d2b1f;
-line-height: 1.6;
+h2{
+margin-top:60px;
+margin-bottom:20px;
+font-size:28px;
+color:#5a2e1f;
 }
 
-/* DEVS */
-.devs {
-display: flex;
-justify-content: center;
-margin-top: 30px;
-flex-wrap: wrap;
-gap: 20px;
+.devs{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+margin-top:30px;
 }
 
-.dev {
-width: 200px;
+.dev img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
 }
 
-.dev img {
-width: 120px;
-height: 120px;
-border-radius: 50%;
+.dev h3{
+margin:10px 0 5px;
 }
 
-.dev h3 {
-margin: 10px 0 5px;
-color: #5a2e1f;
+.dev span{
+font-size:14px;
+color:#555;
 }
 
-.dev p {
-margin: 0;
-font-weight: bold;
-}
-
-.dev span {
-font-size: 14px;
-color: #555;
+footer{
+text-align:center;
+padding:25px;
+background:#92400e;
+color:#ffffff;
+margin-top:40px;
 }
 </style>
-
 </head>
+
 <body>
 
-<!-- NAVBAR -->
 <header>
 <div class="logo">Memória Potiguar</div>
 <nav>
@@ -146,55 +145,61 @@ color: #555;
 
 <div class="container">
 
-<h1>Sobre Nós</h1>
-
-<p><strong>Bem-vindo ao Memória Potiguar!</strong></p>
+<h1>Sobre o Projeto</h1>
 
 <p>
-Este projeto foi criado com o objetivo de preservar e divulgar a história
-e a cultura do Rio Grande do Norte, oferecendo um espaço digital onde os
-potiguares podem explorar o rico patrimônio histórico, cultural e artístico do estado.
+O <strong>Memória Potiguar</strong> é um projeto desenvolvido com o objetivo de valorizar, preservar e divulgar a rica história e cultura do Rio Grande do Norte. Através de uma plataforma digital acessível e intuitiva, buscamos conectar pessoas às suas origens, proporcionando uma experiência informativa e envolvente sobre o patrimônio cultural potiguar.
 </p>
 
 <p>
-O Memória Potiguar é uma iniciativa desenvolvida por quatro estudantes que se uniram para criar um portal
-acessível e informativo, dedicado à preservação da memória e identidade potiguar.
+A iniciativa surgiu da união de estudantes interessados em tecnologia e cultura, que identificaram a necessidade de um espaço dedicado à memória histórica da região. Assim, o projeto reúne conteúdos relacionados à história, ao turismo e à gastronomia, permitindo que os usuários explorem diferentes aspectos da identidade do estado.
 </p>
 
-<h2>Nosso Time de Desenvolvedores</h2>
+<p>
+Mais do que um site informativo, o <strong>Memória Potiguar</strong> se propõe a ser um ambiente de valorização cultural, incentivando o conhecimento, o reconhecimento e o orgulho das tradições locais. Nosso objetivo é contribuir para a preservação da memória coletiva, utilizando a tecnologia como ferramenta de educação e disseminação cultural.
+</p>
+
+<h2>Equipe de Desenvolvedores</h2>
 
 <div class="devs">
 
 <div class="dev">
-<img src="https://via.placeholder.com/120">
-<h3>Cesar Santos</h3>
-<p>Desenvolvedor</p>
+<img src="{{ url_for('static', filename='img/icaro.png') }}">
+<h3>Icaro Emanuel</h3>
 <span>Backend e banco de dados</span>
 </div>
 
 <div class="dev">
-<img src="https://via.placeholder.com/120">
-<h3>Letícia Souza</h3>
-<p>Desenvolvedora</p>
-<span>Design e Front-end</span>
+<img src="{{ url_for('static', filename='img/cesar.png') }}">
+<h3>César Santos</h3>
+<span>Front-end e design</span>
 </div>
 
 <div class="dev">
-<img src="https://via.placeholder.com/120">
-<h3>Guilherme Costa</h3>
-<p>Desenvolvedor</p>
-<span>Lógica e integração</span>
+<img src="{{ url_for('static', filename='img/jacioneide.png') }}">
+<h3>Jacioneide Michelle</h3>
+<span>Lógica, integração e backend </span>
 </div>
 
 <div class="dev">
-<img src="https://via.placeholder.com/120">
-<h3>Rafael Almeida</h3>
-<p>Desenvolvedor</p>
-<span>Otimização e desempenho</span>
+<img src="{{ url_for('static', filename='img/lidia.png') }}">
+<h3>Lídia Maria</h3>
+<span>Front-end</span>
+</div>
+
+<div class="dev">
+<img src="{{ url_for('static', filename='img/felipe.png') }}">
+<h3>Felipe Gabriel</h3>
+<span>Front-end</span>
 </div>
 
 </div>
+
 </div>
+
+<footer>
+© 2026 Memória Potiguar
+</footer>
 
 </body>
 </html>

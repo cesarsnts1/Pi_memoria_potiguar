@@ -2,55 +2,98 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Cadastro</title>
+<title>Cadastro - Memória Potiguar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-font-family:sans-serif;
-background:linear-gradient(120deg,#3f2a1d,#92400e);
+font-family:'Poppins',sans-serif;
+background:linear-gradient(rgba(146,64,14,0.85), rgba(63,42,29,0.95)),
+url("/static/img/fundo0.jpg");
+background-size:cover;
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
 }
 
+/* CARD */
 .container{
 background:white;
 padding:40px;
 border-radius:20px;
-width:300px;
+width:320px;
 text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
+h2{
+color:#92400e;
+margin-bottom:20px;
+}
+
+/* INPUTS */
 input{
 width:100%;
-padding:10px;
+padding:12px;
 margin:10px 0;
+border-radius:10px;
+border:1px solid #ddd;
+outline:none;
+transition:0.3s;
 }
 
+input:focus{
+border-color:#92400e;
+box-shadow:0 0 5px rgba(146,64,14,0.3);
+}
+
+/* BOTÃO */
 button{
 width:100%;
-padding:10px;
+padding:12px;
 background:#92400e;
 color:white;
 border:none;
-border-radius:20px;
+border-radius:25px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
 }
 
-button:hover{background:#78350f;}
+button:hover{
+background:#78350f;
+}
+
+p{
+margin-top:15px;
+}
+
+a{
+color:#92400e;
+text-decoration:none;
+font-weight:500;
+}
+
+a:hover{
+text-decoration:underline;
+}
 </style>
 </head>
 
 <body>
 
 <div class="container">
-<h2>Cadastro</h2>
+<h2>Criar Conta</h2>
 
 <form method="POST">
     <input type="text" name="nome" placeholder="Nome" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="password" name="senha" placeholder="Senha" required>
-    <input type="password" name="confirmar" placeholder="Confirmar Senha" required>
+    <input type="password" name="confirmar" placeholder="Confirmar senha" required>
 
     <button type="submit">Cadastrar</button>
 </form>
