@@ -3,67 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Categorias</title>
+<title>Categorias | Memória Potiguar</title>
 
 <style>
 body{
-font-family:sans-serif;
-background:#f4f6fb;
+    font-family:sans-serif;
+    background:#f4f6fb;
+    margin:0;
+    background-image: radial-gradient(circle at 10% 20%, rgba(146,64,14,0.05), transparent 40%);
 }
 
-/* HEADER */
 header{
-display:flex;
-justify-content:space-between;
-padding:20px;
-background:#92400e;
-color:white;
+    display:flex;
+    justify-content:space-between;
+    padding:20px;
+    background:#92400e;
+    color:white;
 }
 
 nav a{
-margin-left:20px;
-color:white;
-text-decoration:none;
+    margin-left:20px;
+    color:white;
+    text-decoration:none;
 }
 
 .logout{
-background:#ef4444;
-padding:5px 10px;
-border-radius:10px;
+    background:#ef4444;
+    padding:5px 10px;
+    border-radius:10px;
 }
 
-/* GRID */
+.breadcrumb{
+    padding:10px 40px;
+    font-size:0.9rem;
+    color:#777;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px 20px;
+}
+
+.hero h1{
+    font-size:2.5rem;
+    color:#92400e;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#555;
+    max-width:600px;
+    margin:0 auto;
+    font-size:1.1rem;
+}
+
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:40px;
 }
 
 .card{
-background:white;
-padding:20px;
-border-radius:10px;
-text-align:center;
+    background:transparent;
+    border-radius:16px;
+    overflow:hidden;
+    position:relative;
+    height:280px;
+    cursor:pointer;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    animation:fadeUp 0.6s ease forwards;
+    opacity:0;
 }
 
-.card h3{
-color:#92400e;
+.card:hover{
+    transform:scale(1.03);
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
 }
 
-.btn{
-display:inline-block;
-margin-top:10px;
-background:#92400e;
-color:white;
-padding:8px 15px;
-border-radius:20px;
-text-decoration:none;
+.card-bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
 }
 
-.btn:hover{
-background:#78350f;
+.card-bg::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+    transition:0.3s;
 }
+
+.card:hover .card-bg::after{
+    background:rgba(0,0,0,0.45);
+}
+
+.card-content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.card-content h3{
+    color:white;
+    font-size:1.8rem;
+    margin-bottom:10px;
+    text-shadow:2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.card-desc{
+    color:#e5e5e5;
+    font-size:0.9rem;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.ver-mais{
+    color:white;
+    text-decoration:none;
+    padding:8px 20px;
+    border:2px solid white;
+    border-radius:30px;
+    background:rgba(255,255,255,0.15);
+    transition:0.3s;
+}
+
+.card:hover .ver-mais{
+    background:rgba(255,255,255,0.3);
+    transform:translateY(-2px);
+}
+
+@keyframes fadeUp{
+    from{
+        transform:translateY(20px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+.info-section{
+    background:#92400e;
+    color:white;
+    padding:50px 20px;
+    text-align:center;
+    margin-top:20px;
+}
+
+.info-content{
+    max-width:700px;
+    margin:0 auto;
+}
+
+.info-section h2{
+    font-size:1.8rem;
+    margin-bottom:15px;
+}
+
+.info-section p{
+    font-size:1rem;
+    line-height:1.6;
+    color:#f3f3f3;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    background:#92400e;
+    color:white;
+}
+
 </style>
 </head>
 
@@ -78,29 +200,62 @@ background:#78350f;
 </nav>
 </header>
 
+<section class="hero">
+<h1>Descubra o Rio Grande do Norte</h1>
+<p>Explore histórias, sabores e paisagens que constroem a identidade potiguar.</p>
+</section>
+
 <div class="grid">
 
 <div class="card">
-<h3>História</h3>
-<a href="historia.html" class="btn">Explorar</a>
+<div class="card-bg" style="background-image:url('historia.png')"></div>
+<div class="card-content">
+<h3> História</h3>
+<p class="card-desc">Acontecimentos que moldaram o nosso povo.</p>
+<a href="historia.html" class="ver-mais">Ver mais</a>
+</div>
 </div>
 
 <div class="card">
-<h3>Turismo</h3>
-<a href="turismo.html" class="btn">Explorar</a>
+<div class="card-bg" style="background-image:url('turismo.jpg')"></div>
+<div class="card-content">
+<h3> Turismo</h3>
+<p class="card-desc">Belezas naturais e destinos inesquecíveis.</p>
+<a href="turismo.html" class="ver-mais">Ver mais</a>
+</div>
 </div>
 
 <div class="card">
-<h3>Cultura</h3>
-<a href="cultura.html" class="btn">Explorar</a>
+<div class="card-bg" style="background-image:url('cultura.png')"></div>
+<div class="card-content">
+<h3> Cultura</h3>
+<p class="card-desc">Tradições, festas e expressões populares.</p>
+<a href="cultura.html" class="ver-mais">Ver mais</a>
+</div>
 </div>
 
 <div class="card">
-<h3>Gastronomia</h3>
-<a href="gastronomia.html" class="btn">Explorar</a>
+<div class="card-bg" style="background-image:url('gastronomia.jpg')"></div>
+<div class="card-content">
+<h3> Gastronomia</h3>
+<p class="card-desc">Sabores únicos da culinária potiguar.</p>
+<a href="gastronomia.html" class="ver-mais">Ver mais</a>
+</div>
 </div>
 
 </div>
+
+<section class="info-section">
+    <div class="info-content">
+        <h2>Um convite à memória</h2>
+        <p>
+            O Rio Grande do Norte é mais do que paisagens bonitas. É um território de histórias vivas,
+            tradições que resistem ao tempo e sabores que carregam identidade. Cada categoria acima
+            revela um pedaço desse universo, esperando para ser descoberto.
+        </p>
+    </div>
+</section>
+
 
 </body>
 </html>
