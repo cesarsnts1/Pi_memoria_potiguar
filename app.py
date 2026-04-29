@@ -39,7 +39,7 @@ def index():
 def pagina_inicial():
     return render_template("home.html")
 
-@app.route("/turismo")
+@app.route("/categorias")
 def turismo():
     return render_template("categorias.html")
 
@@ -50,10 +50,6 @@ def gastronomia():
 @app.route("/historia")
 def historia():
     return render_template("historia.html")
-
-@app.route("/eventos")
-def eventos():
-    return "<h1>Página de eventos ainda em construção</h1>"
 
 @app.route("/religioso")
 def religioso():
@@ -70,6 +66,11 @@ def favoritos():
 @app.route("/logout")
 def logout():
     return redirect(url_for("login"))
+
+@app.route("/cultura")
+def cultura():
+    return render_template("cultura.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
