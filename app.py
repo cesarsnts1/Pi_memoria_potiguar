@@ -67,9 +67,9 @@ def favoritos():
 def logout():
     return redirect(url_for("login"))
 
-@app.route("/cultura")
+@app.route("/cultural")
 def cultura():
-    return render_template("cultura.html")
+    return render_template("cultural.html")
 
 
 if __name__ == "__main__":
