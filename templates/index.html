@@ -1,276 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Memória Potiguar - Início</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Poppins',sans-serif;
-background-color:#f5e6d3;
-color:#3d2b1f;
-position:relative;
-}
-
-body::before{
-content:"";
-position:fixed;
-top:50%;
-left:50%;
-width:550px;
-height:550px;
-background:url("/static/img/fundo.png") no-repeat center;
-background-size:contain;
-transform:translate(-50%,-50%);
-opacity:0.04;
-z-index:-1;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:#92400e;
-position:fixed;
-width:100%;
-top:0;
-z-index:1000;
-}
-
-.logo{
-font-weight:700;
-font-size:20px;
-color:white;
-}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:white;
-}
-
-nav a:hover{
-color:#fde68a;
-}
-
-.logout{
-background:#ef4444;
-padding:8px 18px;
-border-radius:20px;
-}
-
-.spacer{height:80px;}
-
-.carousel{
-width:90%;
-margin:20px auto;
-height:400px;
-overflow:hidden;
-position:relative;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-.carousel img{
-width:100%;
-height:100%;
-object-fit:cover;
-position:absolute;
-animation:slide 15s infinite;
-opacity:0;
-}
-
-.carousel::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
-top:0;
-left:0;
-}
-
-.carousel img:nth-child(1){animation-delay:0s;}
-.carousel img:nth-child(2){animation-delay:5s;}
-.carousel img:nth-child(3){animation-delay:10s;}
-
-@keyframes slide{
-0%{opacity:0;}
-5%{opacity:1;}
-30%{opacity:1;}
-35%{opacity:0;}
-100%{opacity:0;}
-}
-
-.carousel-text{
-position:absolute;
-z-index:2;
-color:white;
-top:50%;
-left:8%;
-transform:translateY(-50%);
-max-width:500px;
-}
-
-.carousel-text h1{
-font-size:40px;
-margin-bottom:15px;
-}
-
-.carousel-text p{
-color:#f3f3f3;
-}
-
-.section{
-padding:60px 8%;
-text-align:center;
-}
-
-.section h2{
-margin-bottom:30px;
-color:#5a2e1f;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-}
-
-.card-content{
-padding:20px;
-}
-
-.card-content h3{
-color:#92400e;
-margin-bottom:10px;
-}
-
-.btn-section{
-display:inline-block;
-margin-top:20px;
-text-decoration:none;
-background:#92400e;
-color:white;
-padding:10px 22px;
-border-radius:25px;
-transition:0.3s;
-}
-
-.btn-section:hover{
-background:#78350f;
-}
-
-footer{
-text-align:center;
-padding:25px;
-background:#92400e;
-color:#ffffff;
-margin-top:40px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memória Potiguar - Início</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-<div class="logo">Memória Potiguar</div>
-<nav>
-<a href="/index">Início</a>
-<a href="/categorias">Categorias</a>
-<a href="/sobre">Sobre</a>
-<a href="/login" class="logout">Sair</a>
-</nav>
-</header>
+    <header>
+        <div class="logo">Memória Potiguar</div>
+        <nav>
+            <a href="/index">Início</a>
+            <a href="/sobre">Sobre</a>
+            <a href="/login" class="logout">Sair</a>
+        </nav>
+    </header>
 
-<div class="spacer"></div>
+    <div class="spacer"></div>
 
-<section class="carousel">
-<img src="{{ url_for('static', filename='img/barra.jpg') }}">
-<img src="{{ url_for('static', filename='img/Gastrobar.jpg') }}">
-<img src="{{ url_for('static', filename='img/historia.jpg') }}">
+    <section class="carousel principal-carousel">
+        <img src="{{ url_for('static', filename='img/barra.jpg') }}" alt="Banner 1">
+        <img src="{{ url_for('static', filename='img/Gastrobar.jpg') }}" alt="Banner 2">
+        <img src="{{ url_for('static', filename='img/historia.jpg') }}" alt="Banner 3">
 
-<div class="carousel-text">
-<h1>Descubra o RN</h1>
-<p>Explore histórias, cultura e lugares incríveis do Rio Grande do Norte.</p>
-</div>
-</section>
+        <div class="carousel-text">
+            <h1>Descubra o RN</h1>
+            <p>Explore histórias, cultura e lugares incríveis do Rio Grande do Norte.</p>
+        </div>
+    </section>
 
-<section class="section">
-<h2>História</h2>
-<div class="grid">
+    <section class="section-categories-large">
+        
+        <div class="large-card">
+            <div class="large-card-img">
+                <img src="{{ url_for('static', filename='img/historia.jpg') }}" alt="Histórico">
+            </div>
+            <div class="large-card-content">
+                <h2>Histórico</h2>
+                <p>Viaje no tempo conhecendo os monumentos, os marcos da colonização, as memórias esquecidas e o passado que desenhou as linhas e a identidade do povo potiguar através dos séculos.</p>
+                <a href="/historia" class="btn-large-card">Ver mais</a>
+            </div>
+        </div>
 
-<div class="card">
-<img src="{{ url_for('static', filename='img/museu_caicó.jpg') }}">
-<div class="card-content">
-<h3>Fundação de Caicó</h3>
-<p>Origem histórica da cidade no Seridó.</p>
-</div>
-</div>
+        <div class="large-card reverse"> <div class="large-card-img">
+                <img src="{{ url_for('static', filename='img/cutural1.png') }}" alt="Cultural">
+            </div>
+            <div class="large-card-content">
+                <h2>Cultural</h2>
+                <p>Mergulhe de cabeça nas nossas ricas manifestações artísticas, no autêntico artesanato feito à mão, no folclore pulsante e nas expressões únicas que dão vida e movimento à nossa terra.</p>
+                <a href="/cultural" class="btn-large-card">Ver mais</a>
+            </div>
+        </div>
 
-<div class="card">
-<img src="{{ url_for('static', filename='img/Igreja_Matriz_de_Nossa_Senhora_dos_Remédios.jpg') }}">
-<div class="card-content">
-<h3>Patrimônio Cultural</h3>
-<p>Construções históricas da região.</p>
-</div>
-</div>
+        <div class="large-card">
+            <div class="large-card-img">
+                <img src="{{ url_for('static', filename='img/gastronomico1.png') }}" alt="Gastronômico">
+            </div>
+            <div class="large-card-content">
+                <h2>Gastronômico</h2>
+                <p>Saboreie a legítima e marcante culinária sertaneja e litorânea. Uma mesa posta cheia de temperos fortes, histórias de herança e ingredientes nativos que oferecem uma verdadeira viagem de sabores.</p>
+                <a href="/gastronomia" class="btn-large-card">Ver mais</a>
+            </div>
+        </div>
 
-</div>
-<a href="/historia" class="btn-section">Conhecer mais →</a>
-</section>
+    </section>
 
-<section class="section">
-<h2>Turismo</h2>
-<div class="grid">
+    <section class="carousel segundo-carousel">
+        <img src="{{ url_for('static', filename='img/museu_caicó.jpg') }}" alt="Galeria 1">
+        <img src="{{ url_for('static', filename='img/Igreja_Matriz_de_Nossa_Senhora_dos_Remédios.jpg') }}" alt="Galeria 2">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Galeria 3">
+        
+        <div class="carousel-text">
+            <h2>Registros Potiguares</h2>
+            <p>Paisagens e memórias capturadas pelo tempo.</p>
+        </div>
+    </section>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-<div class="card-content">
-<h3>Açude Gargalheiras</h3>
-<p>Ponto turístico do Seridó.</p>
-</div>
-</div>
+    <section class="tribute-section">
+        <div class="tribute-container">
+            <span class="tribute-tag">Homenagem Especial</span>
+            <h2>Velha Barra de Santana</h2>
+            <h3>A Cidade Submersa pelas Águas</h3>
+            <p>
+                Um capítulo de profunda nostalgia e história no coração do Seridó. A Velha Barra de Santana hoje descansa sob as águas, mas sua memória permanece viva na mente de seu povo. Recordar suas ruas, sua capela e sua história é trazer à tona a identidade de uma comunidade que cedeu seu chão para dar lugar ao progresso, mas que nunca deixou suas verdadeiras raízes afundarem.
+            </p>
+            <a href="/sobre" class="btn-tribute">Conhecer essa História →</a>
+        </div>
+    </section>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
-<div class="card-content">
-<h3>Serra de Santana</h3>
-<p>Vista incrível da região.</p>
-</div>
-</div>
-
-</div>
-<a href="/turismo/turismo.html" class="btn-section">Conhecer mais →</a>
-</section>
-
-<footer>
-© 2026 Memória Potiguar
-</footer>
+    <footer>
+        © 2026 Memória Potiguar
+    </footer>
 
 </body>
 </html>
